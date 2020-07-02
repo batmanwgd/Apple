@@ -1,5 +1,5 @@
 import XCTest
-@testable import Apple
+@testable import SolarDesignSystem
 
 final class AppleTests: XCTestCase {
     func testExample() {
