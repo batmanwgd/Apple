@@ -4,10 +4,10 @@ import PackageDescription
 let package = Package(
     name: "SolarDesignSystem",
     platforms: [
-        .watchOS(.v6),
-        .iOS(.v13),
-        .tvOS(.v13),
-        .macOS(.v10_15),
+        .watchOS(.v7),
+        .iOS(.v14),
+        .tvOS(.v14),
+        .macOS(.v10_16),
     ],
     products: [
         .library(name: "SolarDesignSystem", targets: ["SolarDesignSystem"]),
