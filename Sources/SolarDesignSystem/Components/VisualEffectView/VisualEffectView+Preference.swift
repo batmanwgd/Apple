@@ -1,8 +1,8 @@
 //
-//  Theme.swift
+//  VisualEffectView+Preference.swift
 //  Solar Design System
 //
-//  Created by Brandon McQuilkin on 2/7/20.
+//  Created by Brandon McQuilkin on 6/27/20.
 //  Copyright © 2020 Brandon McQuilkin (Marxon13).
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,19 +26,19 @@
 
 import SwiftUI
 
-/// The base theme for the Solar Design System.
-public struct Theme {
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, *)
+@available(watchOS, unavailable)
+struct VisualEffectPreferenceKey: PreferenceKey {
     
-    // MARK: - Properties
+    typealias Value = VisualEffect?
+    static var defaultValue: VisualEffect? = nil
     
-    /// The semantic colors provided by the theme.
-    public var systemColor: SystemColor
-    
-    // MARK: - Initalization
-    
-    public init(systemColor: SystemColor) {
-        self.systemColor = systemColor
+    static func reduce(value: inout VisualEffect?, nextValue: () -> VisualEffect?) {
+        // Use the lowest value only, it would be nice to have these things be combinable, though.
+        guard value == nil else {
+            return
+        }
+        value = nextValue()
     }
     
 }
-

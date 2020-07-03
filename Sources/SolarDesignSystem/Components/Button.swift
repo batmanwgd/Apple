@@ -33,21 +33,23 @@ public struct RoundedRectangleButtonStyle: ButtonStyle {
     
     @Environment(\.theme) var theme: Theme
     
+    public var compact: Bool
+    
     // MARK: - Initialization
     
-    public init() {
-        
+    public init(compact: Bool = false) {
+        self.compact = compact
     }
     
     // MARK: - View
 
     public func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .frame(minHeight: 40)
+            .frame(minHeight: compact ? 28 : 40)
             .font(.body)
             .background(RoundedRectangle(cornerRadius: 12, style: .continuous).fill(Color.accentColor))
             .opacity(configuration.isPressed ? 0.3 : 1.0)
-            .foregroundColor(theme.color.inverseLabel)
+            .foregroundColor(theme.systemColor.inverseLabel)
             .animation(.easeInOut(duration: configuration.isPressed ? 0.05 : 0.2))
     }
     

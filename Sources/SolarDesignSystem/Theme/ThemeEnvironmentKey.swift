@@ -28,7 +28,7 @@ import SwiftUI
 
 public struct ThemeEnvironmentKey: EnvironmentKey {
     
-    public static let defaultValue = Theme(color: SolarDesignSystemThemeColors())
+    public static let defaultValue = Theme(systemColor: SystemColor())
     
 }
 

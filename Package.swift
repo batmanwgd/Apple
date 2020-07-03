@@ -17,6 +17,6 @@ let package = Package(
     ],
     targets: [
         .target(name: "SolarDesignSystem", dependencies: []),
-        .testTarget(name: "SolarDesignSystemTests", dependencies: ["SolarDesignSystem"]),
+        // .testTarget(name: "SolarDesignSystemTests", dependencies: ["SolarDesignSystem"]),
     ]
 )

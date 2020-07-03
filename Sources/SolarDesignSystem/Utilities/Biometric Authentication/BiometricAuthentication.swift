@@ -24,9 +24,8 @@
 //  SOFTWARE.
 //
 
-#if canImport(LocalAuthentication)
+#if canImport(LocalAuthentication) && !os(tvOS)
 import LocalAuthentication
-#endif
 
 /// A wrapper that streamlines biometric authentication.
 @available(OSX 10.15, iOS 13.0, *)
@@ -118,3 +117,4 @@ public class BiometricAuthentication {
     
 }
 
+#endif

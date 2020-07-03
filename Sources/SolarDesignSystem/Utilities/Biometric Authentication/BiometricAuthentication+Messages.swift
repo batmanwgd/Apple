@@ -24,6 +24,11 @@
 //  SOFTWARE.
 //
 
+#if canImport(LocalAuthentication) && !os(tvOS)
+
+@available(OSX 10.15, iOS 13.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
 extension BiometricAuthentication {
     
     /// The messages to use when authenticating with biometrics.
@@ -77,4 +82,4 @@ extension BiometricAuthentication {
     
 }
 
-
+#endif

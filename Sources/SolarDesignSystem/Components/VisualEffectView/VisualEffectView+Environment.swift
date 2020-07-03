@@ -1,8 +1,8 @@
 //
-//  Theme.swift
+//  VisualEffectView+Environment.swift
 //  Solar Design System
 //
-//  Created by Brandon McQuilkin on 2/7/20.
+//  Created by Brandon McQuilkin on 6/27/20.
 //  Copyright © 2020 Brandon McQuilkin (Marxon13).
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,19 +26,28 @@
 
 import SwiftUI
 
-/// The base theme for the Solar Design System.
-public struct Theme {
+/// The key used to access into the `EnvironmentValues` data set.
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, *)
+@available(watchOS, unavailable)
+struct VisualEffectKey: EnvironmentKey {
     
-    // MARK: - Properties
-    
-    /// The semantic colors provided by the theme.
-    public var systemColor: SystemColor
-    
-    // MARK: - Initalization
-    
-    public init(systemColor: SystemColor) {
-        self.systemColor = systemColor
-    }
+    typealias Value = VisualEffect?
+    static var defaultValue: Value = nil
     
 }
 
+extension EnvironmentValues {
+    
+    /// The visual effect applied to views tagged with the `.visualEffect(_:)` modifier, if any.
+    @available(OSX 10.15, iOS 13.0, tvOS 13.0, *)
+    @available(watchOS, unavailable)
+    public var visualEffect: VisualEffect? {
+        get {
+            self[VisualEffectKey.self]
+        }
+        set {
+            self[VisualEffectKey.self] = newValue
+        }
+    }
+    
+}
