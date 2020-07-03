@@ -1,3 +1,3 @@
-# Apple
+# Solar Design System
 
-A description of this package.
+A native first design system.

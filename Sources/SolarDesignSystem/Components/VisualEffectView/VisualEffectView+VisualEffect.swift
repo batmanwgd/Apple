@@ -292,12 +292,6 @@ extension VisualEffect {
     /// Creates a matching `NSEffectParameters`.
     var parameters: NSEffectParameters {
         switch self {
-        case .system:
-            return NSEffectParameters()
-        case .systemLight:
-            return NSEffectParameters(appearance: NSAppearance(named: .aqua))
-        case .systemDark:
-            return NSEffectParameters(appearance: NSAppearance(named: .darkAqua))
         case .adaptive:
             return NSEffectParameters(material: self.material, blendingMode: self.blendingMode)
         case .light:
@@ -309,8 +303,6 @@ extension VisualEffect {
 
     private var material: NSVisualEffectView.Material {
         switch self {
-        case .system, .systemLight, .systemDark:
-            return .contentBackground
         case .adaptive(let material), .light(let material), .dark(let material):
             switch material {
             case .default, .contentBackground:
@@ -345,8 +337,6 @@ extension VisualEffect {
 
     private var blendingMode: NSVisualEffectView.BlendingMode {
         switch self {
-        case .system, .systemLight, .systemDark:
-            return .behindWindow
         case .adaptive(let material), .light(let material), .dark(let material):
             switch material {
             case .default, .windowBackground, .selection:

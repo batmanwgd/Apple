@@ -31,14 +31,29 @@ public struct Theme {
     
     // MARK: - Properties
     
-    /// The semantic colors provided by the theme.
+    /// The semantic colors provided by the operating system.
     public var systemColor: SystemColor
+    
+    /// The semantic colos provided by the Solar Design System.
+    public var color: ThemeColor
     
     // MARK: - Initalization
     
-    public init(systemColor: SystemColor) {
+    public init(color: ThemeColor, systemColor: SystemColor) {
+        self.color = color
         self.systemColor = systemColor
     }
     
 }
 
+
+extension Theme {
+
+    public func `for`(_ keyPath: KeyPath<Theme, Color>?) -> Color {
+        guard let keyPath = keyPath else {
+            return .clear
+        }
+        return self[keyPath: keyPath]
+    }
+
+}

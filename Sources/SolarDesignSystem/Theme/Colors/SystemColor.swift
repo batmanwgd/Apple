@@ -1,5 +1,5 @@
 //
-//  SystemColors.swift
+//  SystemColor.swift
 //  Solar Design System
 //
 //  Created by Brandon McQuilkin on 2/7/20.
@@ -31,6 +31,7 @@ import UIKit
 import AppKit
 #endif
 
+/// The collection of colors provided by the operating system.
 public struct SystemColor {
     
     // MARK: - Properties
@@ -702,37 +703,3 @@ public struct SystemColor {
     }
     
 }
-
-//    /// The tint color for branded elements in their normal state.
-//    public var brand: Color
-//
-//    /// The color for elements that are associated a positive trend or additive action in their normal state.
-//    public var positive: Color
-//
-//    /// The color for elements that need to grab the user's attention in their normal state.
-//    public var callout: Color
-//
-//    /// The color for elements that are associated with a neutral trend in their normal state.
-//    public var neutral: Color
-//
-//    /// The color for elements that need to grab the user's attention in their normal state.
-//    public var warning: Color
-//
-//    /// The color for elements that are associated a negative trend or destructive action in their normal state.
-//    public var negative: Color
-//
-
-//extension ThemeColors {
-//
-//    public func `for`(_ keyPath: KeyPath<ThemeColors, Color>?) -> Color {
-//        return keyPath != nil ? self[keyPath: keyPath!] : colorStorage[""]!
-//    }
-//
-//}
-
-//secondaryBrandBackground: Color = Color(UIColor.systemIndigo.withAlphaComponent(0.20)),
-//secondaryPositiveBackground: Color = Color(UIColor.systemGreen.withAlphaComponent(0.14)),
-//secondaryCalloutBackground: Color = Color(UIColor.systemPurple.withAlphaComponent(0.20)),
-//secondaryNeutralBackground: Color = Color(UIColor.systemBlue.withAlphaComponent(0.17)),
-//secondaryWarningBackground: Color = Color(UIColor.systemOrange.withAlphaComponent(0.15)),
-//secondaryNegativeBackground: Color = Color(UIColor.systemRed.withAlphaComponent(0.17)),
