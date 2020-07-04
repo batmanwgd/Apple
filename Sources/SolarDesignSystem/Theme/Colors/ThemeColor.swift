@@ -36,7 +36,7 @@ public struct ThemeColor {
     
     // MARK: - Main Colors
     
-    /// The tint color for branded elements in their normal state.
+    /// The color for branded elements in their normal state.
     public var brand: Color
     
     /// The color for elements that are associated a positive trend or additive action in their normal state.
