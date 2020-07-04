@@ -79,6 +79,7 @@ public struct SystemColor {
     @available(iOS 13.0, *)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
+    @available(macOS, unavailable)
     public var fill: Color {
         return colorStorage["fill"]!
     }
@@ -87,6 +88,7 @@ public struct SystemColor {
     @available(iOS 13.0, *)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
+    @available(macOS, unavailable)
     public var secondaryFill: Color {
         return colorStorage["secondaryFill"]!
     }
@@ -95,6 +97,7 @@ public struct SystemColor {
     @available(iOS 13.0, *)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
+    @available(macOS, unavailable)
     public var tertiaryFill: Color {
         return colorStorage["tertiaryFill"]!
     }
@@ -103,6 +106,7 @@ public struct SystemColor {
     @available(iOS 13.0, *)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
+    @available(macOS, unavailable)
     public var quaternaryFill: Color {
         return colorStorage["quaternaryFill"]!
     }
@@ -430,7 +434,7 @@ public struct SystemColor {
     @available(tvOS, unavailable)
     @available(macOS, unavailable)
     public var secondaryGroupedBackground: Color {
-        return colorStorage[""]!
+        return colorStorage["secondaryGroupedBackground"]!
     }
     
     /// The color for content layered on top of secondary backgrounds of your grouped interface.
