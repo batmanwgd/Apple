@@ -26,7 +26,7 @@
 
 import SwiftUI
 
-@available(OSX 10.15, iOS 13.0, tvOS 13.0, *)
+@available(macOS 10.15, iOS 13.0, tvOS 13.0, *)
 @available(watchOS, unavailable)
 struct VisualEffectPreferenceKey: PreferenceKey {
     

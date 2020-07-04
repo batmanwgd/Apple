@@ -34,7 +34,7 @@ import AppKit
 
 // MARK: - Visual Effect View
 
-@available(OSX 10.15, iOS 13.0, tvOS 13.0, macCatalyst 13.0, *)
+@available(macOS 10.15, iOS 13.0, tvOS 13.0, macCatalyst 13.0, *)
 @available(watchOS, unavailable)
 struct VisualEffectView: View {
     
@@ -129,7 +129,7 @@ extension View {
      Applies a `VisualEffect` to the background of this view.
      - parameter effect: The effect to use. If unspecified, uses `.adaptive(.default)`.
     */
-    @available(OSX 10.15, iOS 13.0, tvOS 13.0, macCatalyst 13.0, *)
+    @available(macOS 10.15, iOS 13.0, tvOS 13.0, macCatalyst 13.0, *)
     @available(watchOS, unavailable)
     public func visualEffect(_ effect: VisualEffect = .adaptive(.default)) -> some View {
         background(VisualEffectView(effect: effect))
@@ -138,7 +138,7 @@ extension View {
     /// Advertises a view's preference for the `VisualEffect` to be applied to its nearest
     /// ancestor that has the `.visualEffect(_:)` modifier.
     /// - Parameter effect: The requested effect.
-    @available(OSX 10.15, iOS 13.0, tvOS 13.0, macCatalyst 13.0, *)
+    @available(macOS 10.15, iOS 13.0, tvOS 13.0, macCatalyst 13.0, *)
     @available(watchOS, unavailable)
     public func visualEffectPreference(_ effect: VisualEffect) -> some View {
         preference(key: VisualEffectPreferenceKey.self, value: effect)

@@ -33,7 +33,7 @@ import AppKit
 #endif
 
 /// Describes a visual effect to be applied to the background of a view, typically to provide a blurred rendition of the content below the view in z-order.
-@available(OSX 10.15, iOS 13.0, tvOS 13.0, *)
+@available(macOS 10.15, iOS 13.0, tvOS 13.0, *)
 @available(watchOS, unavailable)
 public enum VisualEffect: Equatable, Hashable {
     
@@ -49,53 +49,53 @@ public enum VisualEffect: Equatable, Hashable {
 
         /// An adaptable blur effect that creates the appearance of an ultra-thin material.
         @available(iOS 13.0, tvOS 13.0, *)
-        @available(OSX, unavailable)
+        @available(macOS, unavailable)
         case ultraThin
 
         /// An adaptable blur effect that creates the appearance of a thin material.
         @available(iOS 13.0, tvOS 13.0, *)
-        @available(OSX, unavailable)
+        @available(macOS, unavailable)
         case thin
         
         /// An adaptable blur effect that creates the appearance of a material with normal thickness.
-        @available(OSX 10.15, iOS 13.0, tvOS 13.0, *)
+        @available(macOS 10.15, iOS 13.0, tvOS 13.0, *)
         case `default`
 
         /// An adaptable blur effect that creates the appearance of a material that is thicker than normal.
         @available(iOS 13.0, tvOS 13.0, *)
-        @available(OSX, unavailable)
+        @available(macOS, unavailable)
         case thick
 
         /// An adaptable blur effect that creates the appearance of the system chrome.
         @available(iOS 13.0, tvOS 13.0, *)
-        @available(OSX, unavailable)
+        @available(macOS, unavailable)
         case chrome
         
         // MARK: - Semantic Materials
         
         /// The material for a window’s titlebar.
-        @available(OSX 10.15, *)
+        @available(macOS 10.15, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
         case titlebar
         
         /// The material used to indicate a selection.
-        @available(OSX 10.15, *)
+        @available(macOS 10.15, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
         case selection
         
         /// The material for menus.
-        @available(OSX 10.15, *)
+        @available(macOS 10.15, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
         case menu
         
         /// The material for the background of popover windows.
-        @available(OSX 10.15, *)
+        @available(macOS 10.15, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
@@ -105,42 +105,42 @@ public enum VisualEffect: Equatable, Hashable {
          The material for in-line header or footer views.
          - parameter behindWindow: `true` if the effect should use the content behind the window, `false` to use content within the window at a lower z-order.
         */
-        @available(OSX 10.15, *)
+        @available(macOS 10.15, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
         case headerView(behindWindow: Bool)
         
         /// The material for the background of sheet windows.
-        @available(OSX 10.15, *)
+        @available(macOS 10.15, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
         case sheet
         
         /// The material for the background of opaque windows.
-        @available(OSX 10.15, *)
+        @available(macOS 10.15, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
         case windowBackground
 
         /// The material for the background of heads-up display (HUD) windows.
-        @available(OSX 10.15, *)
+        @available(macOS 10.15, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
         case hudWindow
 
         /// The material for the background of a full-screen modal interface.
-        @available(OSX 10.15, *)
+        @available(macOS 10.15, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
         case fullScreenUI
         
         /// The material for the background of a tool tip.
-        @available(OSX 10.15, *)
+        @available(macOS 10.15, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
@@ -150,7 +150,7 @@ public enum VisualEffect: Equatable, Hashable {
          The material for the background of opaque content.
          - parameter behindWindow: `true` if the effect should use the content behind the window, `false` to use content within the window at a lower z-order.
         */
-        @available(OSX 10.15, *)
+        @available(macOS 10.15, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
@@ -160,7 +160,7 @@ public enum VisualEffect: Equatable, Hashable {
          The material for under a window's background.
          - parameter behindWindow: `true` if the effect should use the content behind the window, `false` to use content within the window at a lower z-order.
         */
-        @available(OSX 10.15, *)
+        @available(macOS 10.15, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
@@ -170,7 +170,7 @@ public enum VisualEffect: Equatable, Hashable {
          The material for the area behind the pages of a document.
          - parameter behindWindow: `true` if the effect should use the content behind the window, `false` to use content within the window at a lower z-order.
         */
-        @available(OSX 10.15, *)
+        @available(macOS 10.15, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)

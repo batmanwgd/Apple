@@ -31,17 +31,17 @@ public enum OperatingSystem {
     
     // MARK: - Cases
     
-    case macOS
     case iOS
+    case macOS
     case tvOS
     case watchOS
     
     // MARK: - Properties
     
-    #if os(macOS)
-    static let current = macOS
-    #elseif os(iOS)
+    #if os(iOS)
     static let current = iOS
+    #elseif os(macOS)
+    static let current = macOS
     #elseif os(tvOS)
     static let current = tvOS
     #elseif os(watchOS)

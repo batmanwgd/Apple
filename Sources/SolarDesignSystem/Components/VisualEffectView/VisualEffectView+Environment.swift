@@ -27,7 +27,7 @@
 import SwiftUI
 
 /// The key used to access into the `EnvironmentValues` data set.
-@available(OSX 10.15, iOS 13.0, tvOS 13.0, *)
+@available(macOS 10.15, iOS 13.0, tvOS 13.0, *)
 @available(watchOS, unavailable)
 struct VisualEffectKey: EnvironmentKey {
     
@@ -39,7 +39,7 @@ struct VisualEffectKey: EnvironmentKey {
 extension EnvironmentValues {
     
     /// The visual effect applied to views tagged with the `.visualEffect(_:)` modifier, if any.
-    @available(OSX 10.15, iOS 13.0, tvOS 13.0, *)
+    @available(macOS 10.15, iOS 13.0, tvOS 13.0, *)
     @available(watchOS, unavailable)
     public var visualEffect: VisualEffect? {
         get {
