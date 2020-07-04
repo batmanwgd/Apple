@@ -647,7 +647,9 @@ public struct SystemColor {
         
         findHighlight: Color? = nil,
         highlight: Color? = nil,
-        shadow: Color? = nil
+        shadow: Color? = nil,
+        
+        separator: Color? = nil
     ) {
         #if os(macOS)
         colorStorage["label"] = label ?? Color(NSColor.labelColor)
@@ -703,6 +705,8 @@ public struct SystemColor {
         colorStorage["findHighlight"] = findHighlight ?? Color(NSColor.findHighlightColor)
         colorStorage["highlight"] = highlight ?? Color(NSColor.highlightColor)
         colorStorage["shadow"] = shadow ?? Color(NSColor.shadowColor)
+        
+        colorStorage["separator"] = separator ?? Color(NSColor.separatorColor)
         #endif
     }
     
