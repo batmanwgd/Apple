@@ -677,7 +677,6 @@ public struct SystemColor {
         colorStorage["unemphasizedSelectedTextBackground"] = unemphasizedSelectedTextBackground ?? Color(NSColor.unemphasizedSelectedTextBackgroundColor)
         
         colorStorage["link"] = link ?? Color(NSColor.linkColor)
-        colorStorage["separator"] = separator ?? Color(NSColor.separatorColor)
         colorStorage["selectedContentBackground"] = selectedContentBackground ?? Color(NSColor.selectedContentBackgroundColor)
         colorStorage["unemphasizedSelectedContentBackground"] = unemphasizedSelectedContentBackground ?? Color(NSColor.unemphasizedSelectedContentBackgroundColor)
         

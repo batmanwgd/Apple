@@ -52,13 +52,18 @@ public struct VisualEffectPreferenceKey: PreferenceKey {
     ]
     #endif
     
-    #if os(iOS) || os(tvOS)
+    #if os(iOS)
     private static let blurEffectOrder: [VisualEffect.BlurEffect] = [
         .chromeMaterial,
         .thickMaterial,
         .material,
         .thinMaterial,
         .ultraThinMaterial
+    ]
+    #elseif os(tvOS)
+    private static let blurEffectOrder: [VisualEffect.BlurEffect] = [
+        .prominent,
+        .regular
     ]
     #elseif os(macOS)
     private static let blurEffectOrder: [VisualEffect.BlurEffect] = [
@@ -85,6 +90,7 @@ public struct VisualEffectPreferenceKey: PreferenceKey {
     // MARK: - Reduce
     
     public static func reduce(value: inout VisualEffect?, nextValue: () -> VisualEffect?) {
+        #if os(iOS) || os(tvOS) || os(macOS)
         guard let effectA = value else {
             value = nextValue()
             return
@@ -135,6 +141,7 @@ public struct VisualEffectPreferenceKey: PreferenceKey {
             value = .dark(finalBlurEffect, finalVibrancyEffect)
             break
         }
+        #endif
     }
     
 }

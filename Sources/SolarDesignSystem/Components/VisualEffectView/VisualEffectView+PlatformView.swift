@@ -31,6 +31,8 @@ import UIKit
 import AppKit
 #endif
 
+@available(macOS 10.16, iOS 14.0, tvOS 14.0, macCatalyst 14.0, *)
+@available(watchOS, unavailable)
 extension VisualEffectView {
     
     #if os(iOS) || os(tvOS)

@@ -33,11 +33,16 @@ public struct VisualEffectKey: EnvironmentKey {
     
     public typealias Value = VisualEffect?
     
-    #if os(iOS) || os(tvOS)
+    #if os(iOS)
     public static var defaultValue: Value = VisualEffect.adaptive(.material, nil)
+    #elseif os(tvOS)
+    public static var defaultValue: Value = VisualEffect.adaptive(.regular, nil)
     #elseif os(macOS)
     public static var defaultValue: Value = VisualEffect.adaptive(.contentBackground(behindWindow: false), nil)
+    #else
+    public static var defaultValue: VisualEffect?
     #endif
+    
 }
 
 extension EnvironmentValues {

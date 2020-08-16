@@ -37,28 +37,45 @@ extension VisualEffect {
         // MARK: - General Materials
 
         /// An adaptable blur effect that creates the appearance of an ultra-thin material.
-        @available(iOS 14.0, tvOS 14.0, *)
+        @available(iOS 14.0, *)
         @available(macOS, unavailable)
+        @available(tvOS, unavailable)
         case ultraThinMaterial
 
         /// An adaptable blur effect that creates the appearance of a thin material.
-        @available(iOS 14.0, tvOS 14.0, *)
+        @available(iOS 14.0, *)
         @available(macOS, unavailable)
+        @available(tvOS, unavailable)
         case thinMaterial
         
         /// An adaptable blur effect that creates the appearance of a material with normal thickness.
-        @available(macOS 10.16, iOS 14.0, tvOS 14.0, *)
+        @available(macOS 10.16, iOS 14.0, *)
+        @available(tvOS, unavailable)
         case material
 
         /// An adaptable blur effect that creates the appearance of a material that is thicker than normal.
-        @available(iOS 14.0, tvOS 14.0, *)
+        @available(iOS 14.0, *)
         @available(macOS, unavailable)
+        @available(tvOS, unavailable)
         case thickMaterial
 
         /// An adaptable blur effect that creates the appearance of the system chrome.
-        @available(iOS 14.0, tvOS 14.0, *)
+        @available(iOS 14.0, *)
+        @available(tvOS, unavailable)
         @available(macOS, unavailable)
         case chromeMaterial
+        
+        /// A regular blur style that adapts to the user interface style.
+        @available(tvOS 14.0, *)
+        @available(iOS, unavailable)
+        @available(macOS, unavailable)
+        case regular
+        
+        /// A blur style for making content more prominent that adapts to the user interface style.
+        @available(tvOS 14.0, *)
+        @available(iOS, unavailable)
+        @available(macOS, unavailable)
+        case prominent
         
         // MARK: - Semantic Materials
         

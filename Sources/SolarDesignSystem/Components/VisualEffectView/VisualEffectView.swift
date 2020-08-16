@@ -80,6 +80,7 @@ public struct VisualEffectView<Content: View>: View {
     // MARK: - View
     
     public var body: some View {
+        #if os(iOS) || os(tvOS) || os(macOS)
         PlatformView {
             content
                 .environment(\.visualEffect, visualEffect)
@@ -87,6 +88,9 @@ public struct VisualEffectView<Content: View>: View {
                     self.visualEffect = $0
                 }
         }
+        #else
+        EmptyView()
+        #endif
     }
     
 }

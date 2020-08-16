@@ -13,7 +13,13 @@
 ### Fixed
 - No fixes
 
-## [0.0.5] = 2020-08-15
+## [0.0.6] - 2020-08-15
+
+### Fixed
+- A compile issue on tvOS due to unsupported `VisualEffect`s
+- A compile issue on macOS due to a duplicated system color name.
+
+## [0.0.5] - 2020-08-15
 
 ### Changes
 - Visual effect views now accept a content view.

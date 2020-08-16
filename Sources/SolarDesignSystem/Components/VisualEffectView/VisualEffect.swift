@@ -46,6 +46,7 @@ public enum VisualEffect: Hashable {
     #if !os(watchOS) && canImport(UIKit)
     
     internal var platformBlurEffect: UIBlurEffect {
+        #if os(iOS)
         switch self {
         case let .adaptive(blurEffect, _):
             switch blurEffect {
@@ -87,6 +88,31 @@ public enum VisualEffect: Hashable {
                 return UIBlurEffect(style: .systemChromeMaterialDark)
             }
         }
+        #elseif os(tvOS)
+        switch self {
+        case let .adaptive(blurEffect, _):
+            switch blurEffect {
+            case .regular:
+                return UIBlurEffect(style: .regular)
+            case .prominent:
+                return UIBlurEffect(style: .prominent)
+            }
+        case let .light(blurEffect, _):
+            switch blurEffect {
+            case .regular:
+                return UIBlurEffect(style: .light)
+            case .prominent:
+                return UIBlurEffect(style: .extraLight)
+            }
+        case let .dark(blurEffect, _):
+            switch blurEffect {
+            case .regular:
+                return UIBlurEffect(style: .dark)
+            case .prominent:
+                return UIBlurEffect(style: .extraDark)
+            }
+        }
+        #endif
     }
     
     internal var platformVibrancyEffect: UIVibrancyEffect? {
@@ -97,7 +123,7 @@ public enum VisualEffect: Hashable {
             }
             
             #if os(tvOS)
-            return UIVibrancyEffect(blur: platformBlurEffect)
+            return UIVibrancyEffect(blurEffect: platformBlurEffect)
             #else
             switch vibrancyEffect {
             case .default:
