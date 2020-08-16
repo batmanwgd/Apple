@@ -52,7 +52,7 @@ public struct VisualEffectView<Content: View>: View {
     /**
      Creates a visual effect view that uses the effect specified by the environment.
     */
-    public init() where Content = EmptyView {
+    public init() where Content == EmptyView {
         self.content = EmptyView()
         self.createdWithSpecificEffect = false
     }
