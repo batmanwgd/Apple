@@ -50,6 +50,14 @@ public struct VisualEffectView<Content: View>: View {
     // MARK: - Initialization
     
     /**
+     Creates a visual effect view that uses the effect specified by the environment.
+    */
+    public init() where Content = EmptyView {
+        self.content = EmptyView()
+        self.createdWithSpecificEffect = false
+    }
+    
+    /**
      Creates a visual effect view that uses the preferred effect of the content, or the effect specified by the environment.
      - parameter content: The content of the visual effect view.
     */

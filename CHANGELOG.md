@@ -13,6 +13,17 @@
 ### Fixed
 - No fixes
 
+## [0.0.5] = 2020-08-15
+
+### Changes
+- Visual effect views now accept a content view.
+- Updated button padding to use the padding determined by the system.
+- Updated the minimum supported versions to:
+    - iOS 14
+    - tvOS 14
+    - watchOS 7
+    - macOS 11
+
 ## [0.0.4] - 2020-07-03
 
 ### Fixed
