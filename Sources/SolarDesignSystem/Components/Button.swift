@@ -45,8 +45,8 @@ public struct RoundedRectangleButtonStyle: ButtonStyle {
 
     public func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .frame(minHeight: compact ? 28 : 40)
-            .font(.body)
+            .padding()
+            .font(.headline)
             .background(RoundedRectangle(cornerRadius: 12, style: .continuous).fill(Color.accentColor))
             .opacity(configuration.isPressed ? 0.3 : 1.0)
             .foregroundColor(theme.systemColor.inverseLabel)

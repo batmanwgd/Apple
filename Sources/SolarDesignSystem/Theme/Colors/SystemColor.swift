@@ -42,33 +42,33 @@ public struct SystemColor {
     // MARK: - Labels
     
     /// The color for text labels that contain primary content.
-    @available(iOS 13.0, watchOS 6.0, tvOS 13.0, macOS 10.15, *)
+    @available(iOS 14.0, watchOS 6.0, tvOS 14.0, macOS 10.16, *)
     public var label: Color {
         return colorStorage["label"]!
     }
     
     /// The color for text labels that contain secondary content.
-    @available(iOS 13.0, watchOS 6.0, tvOS 13.0, macOS 10.15, *)
+    @available(iOS 14.0, watchOS 6.0, tvOS 14.0, macOS 10.16, *)
     public var secondaryLabel: Color {
         return colorStorage["secondaryLabel"]!
     }
     
     /// The color for text labels that contain tertiary content.
-    @available(iOS 13.0, tvOS 13.0, macOS 10.15, *)
+    @available(iOS 14.0, tvOS 14.0, macOS 10.16, *)
     @available(watchOS, unavailable)
     public var tertiaryLabel: Color {
         return colorStorage["tertiaryLabel"]!
     }
     
     /// The color for text labels that contain quaternary content.
-    @available(iOS 13.0, tvOS 13.0, macOS 10.15, *)
+    @available(iOS 14.0, tvOS 14.0, macOS 10.16, *)
     @available(watchOS, unavailable)
     public var quaternaryLabel: Color {
         return colorStorage["quaternaryLabel"]!
     }
     
     /// The color for labels that contain primary content layered on top of a tint color.
-    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    @available(iOS 14.0, tvOS 14.0, watchOS 6.0, macOS 10.16, *)
     public var inverseLabel: Color {
         return colorStorage["inverseLabel"]!
     }
@@ -76,7 +76,7 @@ public struct SystemColor {
     // MARK: - Fills
     
     /// An overlay fill color for thin and small shapes.
-    @available(iOS 13.0, *)
+    @available(iOS 14.0, *)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
     @available(macOS, unavailable)
@@ -85,7 +85,7 @@ public struct SystemColor {
     }
     
     /// An overlay fill color for medium-size shapes.
-    @available(iOS 13.0, *)
+    @available(iOS 14.0, *)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
     @available(macOS, unavailable)
@@ -94,7 +94,7 @@ public struct SystemColor {
     }
     
     /// An overlay fill color for large shapes.
-    @available(iOS 13.0, *)
+    @available(iOS 14.0, *)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
     @available(macOS, unavailable)
@@ -103,7 +103,7 @@ public struct SystemColor {
     }
     
     /// An overlay fill color for large areas that contain complex content.
-    @available(iOS 13.0, *)
+    @available(iOS 14.0, *)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
     @available(macOS, unavailable)
@@ -114,7 +114,7 @@ public struct SystemColor {
     // MARK: - Text
     
     /// The color to use for text.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -123,14 +123,14 @@ public struct SystemColor {
     }
     
     /// The color for placeholder text in controls or text views.
-    @available(iOS 13.0, tvOS 13.0, macOS 10.15, *)
+    @available(iOS 14.0, tvOS 14.0, macOS 10.16, *)
     @available(watchOS, unavailable)
     public var placeholderText: Color {
         return colorStorage["placeholderText"]!
     }
     
     /// The color to use for selected text.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -139,7 +139,7 @@ public struct SystemColor {
     }
     
     /// The color to use for the background area behind text.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -148,7 +148,7 @@ public struct SystemColor {
     }
     
     /// The color to use for the background of selected text.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -157,7 +157,7 @@ public struct SystemColor {
     }
     
     /// The color to use for the keyboard focus ring around controls.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -166,7 +166,7 @@ public struct SystemColor {
     }
     
     /// The color to use for selected text in an unemphasized context.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -175,7 +175,7 @@ public struct SystemColor {
     }
     
     /// The color to use for the text background in an unemphasized context.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -186,14 +186,14 @@ public struct SystemColor {
     // MARK: - Content
     
     /// The color to use for links.
-    @available(iOS 13.0, tvOS 13.0, macOS 10.15, *)
+    @available(iOS 14.0, tvOS 14.0, macOS 10.16, *)
     @available(watchOS, unavailable)
     public var link: Color {
         return colorStorage["link"]!
     }
     
     /// The color to use for the background of selected and emphasized content.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -202,7 +202,7 @@ public struct SystemColor {
     }
     
     /// The color to use for selected and unemphasized content.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -213,7 +213,7 @@ public struct SystemColor {
     // MARK: - Menu
     
     /// The color to use for the text in menu items.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -224,7 +224,7 @@ public struct SystemColor {
     // MARK: - Table Colors
     
     /// The color to use for the optional gridlines, such as those in a table view.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -233,7 +233,7 @@ public struct SystemColor {
     }
     
     /// The color to use for text in header cells in table views and outline views.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -242,7 +242,7 @@ public struct SystemColor {
     }
     
     /// The colors to use for alternating content, typically found in table views and collection views.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -253,7 +253,7 @@ public struct SystemColor {
     // MARK: - Controls
     
     /// The user's current accent color preference.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -262,7 +262,7 @@ public struct SystemColor {
     }
     
     /// The color to use for the flat surfaces of a control.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -271,7 +271,7 @@ public struct SystemColor {
     }
     
     /// The color to use for the background of large controls, such as scroll views or table views.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -280,7 +280,7 @@ public struct SystemColor {
     }
     
     /// The color to use for text on enabled controls.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -289,7 +289,7 @@ public struct SystemColor {
     }
     
     /// The color to use for text on disabled controls.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -298,7 +298,7 @@ public struct SystemColor {
     }
     
     /// The color to use for the face of a selected control—that is, a control that has been clicked or is being dragged.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -307,7 +307,7 @@ public struct SystemColor {
     }
     
     /// The color to use for text in a selected control—that is, a control being clicked or dragged.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -316,7 +316,7 @@ public struct SystemColor {
     }
     
     /// The color to use for text in a selected control.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -325,7 +325,7 @@ public struct SystemColor {
     }
     
     /// The patterned color to use for the background of a scrubber control.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -336,7 +336,7 @@ public struct SystemColor {
     // MARK: - Window Colors
     
     /// The color to use for the window background.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -345,7 +345,7 @@ public struct SystemColor {
     }
     
     /// The color to use for text in a window's frame.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -354,7 +354,7 @@ public struct SystemColor {
     }
     
     /// The color to use in the area beneath your window's views.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -366,7 +366,7 @@ public struct SystemColor {
     // MARK: - Highlights and Shadows
     
     /// The highlight color to use for the bubble that shows inline search result values.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -375,7 +375,7 @@ public struct SystemColor {
     }
     
     /// The color to use as a virtual light source on the screen.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -384,7 +384,7 @@ public struct SystemColor {
     }
     
     /// The color to use for virtual shadows cast by raised objects on the screen.
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -395,7 +395,7 @@ public struct SystemColor {
     // MARK: - Backgrounds
     
     /// The color for the main background of your interface.
-    @available(iOS 13.0, watchOS 6.0, *)
+    @available(iOS 14.0, watchOS 6.0, *)
     @available(tvOS, unavailable)
     @available(macOS, unavailable)
     public var background: Color {
@@ -403,7 +403,7 @@ public struct SystemColor {
     }
     
     /// The color for content layered on top of the main background.
-    @available(iOS 13.0, watchOS 6.0, *)
+    @available(iOS 14.0, watchOS 6.0, *)
     @available(tvOS, unavailable)
     @available(macOS, unavailable)
     public var secondaryBackground: Color {
@@ -411,7 +411,7 @@ public struct SystemColor {
     }
     
     /// The color for content layered on top of secondary backgrounds.
-    @available(iOS 13.0, *)
+    @available(iOS 14.0, *)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
     @available(macOS, unavailable)
@@ -420,7 +420,7 @@ public struct SystemColor {
     }
     
     /// The color for the main background of your grouped interface.
-    @available(iOS 13.0, *)
+    @available(iOS 14.0, *)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
     @available(macOS, unavailable)
@@ -429,7 +429,7 @@ public struct SystemColor {
     }
     
     /// The color for content layered on top of the main background of your grouped interface.
-    @available(iOS 13.0, *)
+    @available(iOS 14.0, *)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
     @available(macOS, unavailable)
@@ -438,7 +438,7 @@ public struct SystemColor {
     }
     
     /// The color for content layered on top of secondary backgrounds of your grouped interface.
-    @available(iOS 13.0, *)
+    @available(iOS 14.0, *)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
     @available(macOS, unavailable)
@@ -449,13 +449,13 @@ public struct SystemColor {
     // MARK: - Separators
     
     /// The color for thin borders or divider lines that allows some underlying content to be visible.
-    @available(iOS 13.0, watchOS 6.0, tvOS 13.0, macOS 10.15, *)
+    @available(iOS 14.0, watchOS 6.0, tvOS 14.0, macOS 10.16, *)
     public var separator: Color {
         return colorStorage["separator"]!
     }
     
     /// The color for borders or divider lines that hides any underlying content.
-    @available(iOS 13.0, tvOS 13.0, *)
+    @available(iOS 14.0, tvOS 14.0, *)
     @available(watchOS, unavailable)
     @available(macOS, unavailable)
     public var opaqueSeparator: Color {
@@ -464,7 +464,7 @@ public struct SystemColor {
     
     // MARK: - Initialization
     
-    @available(iOS 13.0, *)
+    @available(iOS 14.0, *)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
     @available(macOS, unavailable)
@@ -531,7 +531,7 @@ public struct SystemColor {
         #endif
     }
     
-    @available(tvOS 13.0, *)
+    @available(tvOS 14.0, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(macOS, unavailable)
@@ -600,7 +600,7 @@ public struct SystemColor {
         #endif
     }
     
-    @available(macOS 10.15, *)
+    @available(macOS 10.16, *)
     @available(iOS, unavailable)
     @available(watchOS, unavailable)
     @available(tvOS, unavailable)
@@ -621,7 +621,6 @@ public struct SystemColor {
         unemphasizedSelectedTextBackground: Color? = nil,
         
         link: Color? = nil,
-        separator: Color? = nil,
         selectedContentBackground: Color? = nil,
         unemphasizedSelectedContentBackground: Color? = nil,
         

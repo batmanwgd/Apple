@@ -28,7 +28,7 @@
 import LocalAuthentication
 
 /// A wrapper that streamlines biometric authentication.
-@available(macOS 10.15, iOS 13.0, *)
+@available(macOS 10.16, iOS 14.0, *)
 @available(watchOS, unavailable)
 @available(tvOS, unavailable)
 public class BiometricAuthentication {

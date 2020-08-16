@@ -2,7 +2,7 @@
 //  VisualEffectView+Environment.swift
 //  Solar Design System
 //
-//  Created by Brandon McQuilkin on 6/27/20.
+//  Created by Brandon McQuilkin on 7/5/20.
 //  Copyright © 2020 Brandon McQuilkin (Marxon13).
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,19 +27,23 @@
 import SwiftUI
 
 /// The key used to access into the `EnvironmentValues` data set.
-@available(macOS 10.15, iOS 13.0, tvOS 13.0, *)
+@available(macOS 10.16, iOS 14.0, tvOS 14.0, *)
 @available(watchOS, unavailable)
-struct VisualEffectKey: EnvironmentKey {
+public struct VisualEffectKey: EnvironmentKey {
     
-    typealias Value = VisualEffect?
-    static var defaultValue: Value = nil
+    public typealias Value = VisualEffect?
     
+    #if os(iOS) || os(tvOS)
+    public static var defaultValue: Value = VisualEffect.adaptive(.material, nil)
+    #elseif os(macOS)
+    public static var defaultValue: Value = VisualEffect.adaptive(.contentBackground(behindWindow: false), nil)
+    #endif
 }
 
 extension EnvironmentValues {
     
     /// The visual effect applied to views tagged with the `.visualEffect(_:)` modifier, if any.
-    @available(macOS 10.15, iOS 13.0, tvOS 13.0, *)
+    @available(macOS 10.16, iOS 14.0, tvOS 14.0, *)
     @available(watchOS, unavailable)
     public var visualEffect: VisualEffect? {
         get {

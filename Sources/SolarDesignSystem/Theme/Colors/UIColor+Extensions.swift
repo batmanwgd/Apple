@@ -25,7 +25,7 @@ extension UIColor {
     }
     
     public static var systemGreen: UIColor {
-        UIColor(red: 4.0 / 255.0, green: 222.0 / 255.0, blue: 113.0 / 255.0, alpha: 1.0)
+        UIColor(red: 4.0 / 255.0, green: 222.0 / 255.0, blue: 114.0 / 255.0, alpha: 1.0)
     }
     
     public static var systemMint: UIColor {
