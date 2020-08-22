@@ -49,11 +49,8 @@ public struct Theme {
 
 extension Theme {
 
-    public func `for`(_ keyPath: KeyPath<Theme, Color>?) -> Color {
-        guard let keyPath = keyPath else {
-            return .clear
-        }
-        return self[keyPath: keyPath]
+    public func value(_ keyPath: KeyPath<Theme, Color>) -> Color {
+        self[keyPath: keyPath]
     }
 
 }

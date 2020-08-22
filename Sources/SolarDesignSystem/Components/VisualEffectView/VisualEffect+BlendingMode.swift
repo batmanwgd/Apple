@@ -1,5 +1,5 @@
 //
-//  VisualEffectView+Environment.swift
+//  VisualEffectView+BlendingMode.swift
 //  Solar Design System
 //
 //  Created by Brandon McQuilkin on 7/5/20.
@@ -26,37 +26,24 @@
 
 import SwiftUI
 
-/// The key used to access into the `EnvironmentValues` data set.
 @available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
 @available(watchOS, unavailable)
-public struct VisualEffectKey: EnvironmentKey {
+extension VisualEffect {
     
-    public typealias Value = VisualEffect?
-    
-    #if os(iOS)
-    public static var defaultValue: Value = VisualEffect.adaptive(blurEffect: .material)
-    #elseif os(tvOS)
-    public static var defaultValue: Value = VisualEffect.adaptive(blurEffect: .regular)
-    #elseif os(macOS)
-    public static var defaultValue: Value = VisualEffect.adaptive(blurEffect: .contentBackground)
-    #else
-    public static var defaultValue: VisualEffect?
-    #endif
-    
-}
-
-extension EnvironmentValues {
-    
-    /// The visual effect applied to views tagged with the `.visualEffect(_:)` modifier, if any.
-    @available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
-    @available(watchOS, unavailable)
-    public var visualEffect: VisualEffect? {
-        get {
-            self[VisualEffectKey.self]
-        }
-        set {
-            self[VisualEffectKey.self] = newValue
-        }
+    public enum BlendingMode: Hashable {
+        
+        // MARK: - Standard Styles
+        
+        /// A mode that blends and blurs the visual effect view with the contents behind the window, such as the desktop or other windows.
+        @available(macOS 11.0, *)
+        @available(iOS, unavailable)
+        @available(tvOS, unavailable)
+        @available(watchOS, unavailable)
+        case behindWindow
+        
+        /// A mode that blends and blurs the visual effect view with contents behind the view in the current window only.
+        case withinWindow
+        
     }
     
 }

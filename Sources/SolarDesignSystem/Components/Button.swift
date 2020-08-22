@@ -33,12 +33,12 @@ public struct RoundedRectangleButtonStyle: ButtonStyle {
     
     @Environment(\.theme) var theme: Theme
     
-    public var compact: Bool
+    private var style: BaseStyle
     
     // MARK: - Initialization
     
-    public init(compact: Bool = false) {
-        self.compact = compact
+    public init(style: BaseStyle) {
+        self.style = style
     }
     
     // MARK: - View
@@ -47,9 +47,12 @@ public struct RoundedRectangleButtonStyle: ButtonStyle {
         configuration.label
             .padding()
             .font(.headline)
-            .background(RoundedRectangle(cornerRadius: 12, style: .continuous).fill(Color.accentColor))
+            .background(
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .fill(theme.value(style.backgroundColor))
+            )
+            .foregroundColor(theme.value(style.foregroundColor))
             .opacity(configuration.isPressed ? 0.3 : 1.0)
-            .foregroundColor(theme.systemColor.inverseLabel)
             .animation(.easeInOut(duration: configuration.isPressed ? 0.05 : 0.2))
     }
     

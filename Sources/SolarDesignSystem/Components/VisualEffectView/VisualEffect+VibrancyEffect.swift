@@ -26,6 +26,8 @@
 
 import SwiftUI
 
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@available(watchOS, unavailable)
 extension VisualEffect {
     
     public enum VibrancyEffect: Hashable {

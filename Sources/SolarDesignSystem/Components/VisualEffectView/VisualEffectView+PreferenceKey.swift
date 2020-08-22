@@ -26,7 +26,7 @@
 
 import SwiftUI
 
-@available(macOS 10.16, iOS 14.0, tvOS 14.0, *)
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
 @available(watchOS, unavailable)
 public struct VisualEffectPreferenceKey: PreferenceKey {
     
@@ -70,21 +70,18 @@ public struct VisualEffectPreferenceKey: PreferenceKey {
         .titlebar,
         .menu,
         .popover,
+        .sidebar,
         .selection,
-        .headerView(behindWindow: false),
-        .headerView(behindWindow: true),
+        .headerView,
         .sheet,
         .windowBackground,
         .hudWindow,
         .fullScreenUI,
         .toolTip,
-        .contentBackground(behindWindow: false),
-        .underPageBackground(behindWindow: false),
-        .underPageBackground(behindWindow: false),
-        .contentBackground(behindWindow: true),
-        .underPageBackground(behindWindow: true),
-        .underPageBackground(behindWindow: true),
+        .contentBackground,
+        .underPageBackground
     ]
+    
     #endif
     
     // MARK: - Reduce
@@ -103,24 +100,31 @@ public struct VisualEffectPreferenceKey: PreferenceKey {
         // Try to find the most adaptable visual effect with the highest contrast.
         let blurEffectA: VisualEffect.BlurEffect
         let vibrancyEffectA: VisualEffect.VibrancyEffect?
+        let blendingModeA: VisualEffect.BlendingMode?
         let blurEffectB: VisualEffect.BlurEffect
         let vibrancyEffectB: VisualEffect.VibrancyEffect?
+        let blendingModeB: VisualEffect.BlendingMode?
         
+        // Retreive the existing effect values.
         switch effectA {
-            case let .adaptive(blurEffect, vibrancyEffect), let .light(blurEffect, vibrancyEffect), let .dark(blurEffect, vibrancyEffect):
+            case let .adaptive(blurEffect, vibrancyEffect, blendingMode), let .light(blurEffect, vibrancyEffect, blendingMode), let .dark(blurEffect, vibrancyEffect, blendingMode):
                 blurEffectA = blurEffect
                 vibrancyEffectA = vibrancyEffect
+                blendingModeA = blendingMode
         }
         switch effectB {
-            case let .adaptive(blurEffect, vibrancyEffect), let .light(blurEffect, vibrancyEffect), let .dark(blurEffect, vibrancyEffect):
+            case let .adaptive(blurEffect, vibrancyEffect, blendingMode), let .light(blurEffect, vibrancyEffect, blendingMode), let .dark(blurEffect, vibrancyEffect, blendingMode):
                 blurEffectB = blurEffect
                 vibrancyEffectB = vibrancyEffect
+                blendingModeB = blendingMode
         }
         
+        // Determine the highest contrast blur efffect.
         let blurEffectIndexA = blurEffectOrder.firstIndex(of: blurEffectA)!
         let blurEffectIndexB = blurEffectOrder.firstIndex(of: blurEffectB)!
         let finalBlurEffect = blurEffectIndexA < blurEffectIndexB ? blurEffectA : blurEffectB
 
+        // Determine the highest contrast vibrancy effect.
         let finalVibrancyEffect: VisualEffect.VibrancyEffect?
         if let vibrancyEffectA = vibrancyEffectA, let vibrancyEffectB = vibrancyEffectB {
             let vibrancyEffectIndexA = vibrancyEffectOrder.firstIndex(of: vibrancyEffectA)!
@@ -130,15 +134,23 @@ public struct VisualEffectPreferenceKey: PreferenceKey {
             finalVibrancyEffect = vibrancyEffectA ?? vibrancyEffectB
         }
         
+        // Determine the highest contrast blending mode.
+        #if os(macOS)
+        let finalBlendingMode: VisualEffect.BlendingMode = blendingModeA == .withinWindow || blendingModeB == .withinWindow ? .withinWindow : .behindWindow
+        #else
+        let finalBlendingMode = VisualEffect.BlendingMode.withinWindow
+        #endif
+        
+        // Set the new value.
         switch (effectA, effectB) {
-        case (.adaptive(_, _), _), (_, .adaptive(_, _)):
-            value = .adaptive(finalBlurEffect, finalVibrancyEffect)
+        case (.adaptive(_, _, _), _), (_, .adaptive(_, _, _)):
+            value = .adaptive(blurEffect: finalBlurEffect, vibrancyEffect: finalVibrancyEffect, blendingMode: finalBlendingMode)
             break
-        case (.light(_, _), _), (_, .light(_, _)):
-            value = .light(finalBlurEffect, finalVibrancyEffect)
+        case (.light(_, _, _), _), (_, .light(_, _, _)):
+            value = .light(blurEffect: finalBlurEffect, vibrancyEffect: finalVibrancyEffect, blendingMode: finalBlendingMode)
             break
-        case (.dark(_, _), _), (_, .dark(_, _)):
-            value = .dark(finalBlurEffect, finalVibrancyEffect)
+        case (.dark(_, _, _), _), (_, .dark(_, _, _)):
+            value = .dark(blurEffect: finalBlurEffect, vibrancyEffect: finalVibrancyEffect, blendingMode: finalBlendingMode)
             break
         }
         #endif

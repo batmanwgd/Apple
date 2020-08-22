@@ -26,6 +26,8 @@
 
 import SwiftUI
 
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@available(watchOS, unavailable)
 extension VisualEffect {
     
     /**
@@ -49,7 +51,8 @@ extension VisualEffect {
         case thinMaterial
         
         /// An adaptable blur effect that creates the appearance of a material with normal thickness.
-        @available(macOS 10.16, iOS 14.0, *)
+        @available(iOS 14.0, *)
+        @available(macOS, unavailable)
         @available(tvOS, unavailable)
         case material
 
@@ -80,107 +83,102 @@ extension VisualEffect {
         // MARK: - Semantic Materials
         
         /// The material for a window’s titlebar.
-        @available(macOS 10.16, *)
+        @available(macOS 11.0, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
         case titlebar
         
         /// The material used to indicate a selection.
-        @available(macOS 10.16, *)
+        @available(macOS 11.0, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
         case selection
         
         /// The material for menus.
-        @available(macOS 10.16, *)
+        @available(macOS 11.0, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
         case menu
         
         /// The material for the background of popover windows.
-        @available(macOS 10.16, *)
+        @available(macOS 11.0, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
         case popover
         
-        /**
-         The material for in-line header or footer views.
-         - parameter behindWindow: `true` if the effect should use the content behind the window, `false` to use content within the window at a lower z-order.
-        */
-        @available(macOS 10.16, *)
+        /// The material for the background of window sidebars.
+        @available(macOS 11.0, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
-        case headerView(behindWindow: Bool)
+        case sidebar
+        
+        /// The material for in-line header or footer views.
+        @available(macOS 11.0, *)
+        @available(iOS, unavailable)
+        @available(tvOS, unavailable)
+        @available(macCatalyst, unavailable)
+        case headerView
         
         /// The material for the background of sheet windows.
-        @available(macOS 10.16, *)
+        @available(macOS 11.0, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
         case sheet
         
         /// The material for the background of opaque windows.
-        @available(macOS 10.16, *)
+        @available(macOS 11.0, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
         case windowBackground
 
         /// The material for the background of heads-up display (HUD) windows.
-        @available(macOS 10.16, *)
+        @available(macOS 11.0, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
         case hudWindow
 
         /// The material for the background of a full-screen modal interface.
-        @available(macOS 10.16, *)
+        @available(macOS 11.0, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
         case fullScreenUI
         
         /// The material for the background of a tool tip.
-        @available(macOS 10.16, *)
+        @available(macOS 11.0, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
         case toolTip
 
-        /**
-         The material for the background of opaque content.
-         - parameter behindWindow: `true` if the effect should use the content behind the window, `false` to use content within the window at a lower z-order.
-        */
-        @available(macOS 10.16, *)
+        /// The material for the background of opaque content.
+        @available(macOS 11.0, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
-        case contentBackground(behindWindow: Bool)
+        case contentBackground
         
-        /**
-         The material for under a window's background.
-         - parameter behindWindow: `true` if the effect should use the content behind the window, `false` to use content within the window at a lower z-order.
-        */
-        @available(macOS 10.16, *)
+        /// The material for under a window's background.
+        @available(macOS 11.0, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
-        case underWindowBackground(behindWindow: Bool)
+        case underWindowBackground
 
-        /**
-         The material for the area behind the pages of a document.
-         - parameter behindWindow: `true` if the effect should use the content behind the window, `false` to use content within the window at a lower z-order.
-        */
-        @available(macOS 10.16, *)
+        /// The material for the area behind the pages of a document.
+        @available(macOS 11.0, *)
         @available(iOS, unavailable)
         @available(tvOS, unavailable)
         @available(macCatalyst, unavailable)
-        case underPageBackground(behindWindow: Bool)
+        case underPageBackground
         
     }
     

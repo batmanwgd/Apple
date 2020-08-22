@@ -31,7 +31,7 @@ import UIKit
 import AppKit
 #endif
 
-@available(macOS 10.16, iOS 14.0, tvOS 14.0, macCatalyst 14.0, *)
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, macCatalyst 14.0, *)
 @available(watchOS, unavailable)
 extension VisualEffectView {
     
@@ -58,62 +58,111 @@ extension VisualEffectView {
             
             hostingController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             
-            if let vibrancyEffect = effect?.platformVibrancyEffect {
-                addVibrancyView(to: baseEffectView, vibrancyEffect: vibrancyEffect)
-                (baseEffectView.contentView.subviews.first as! UIVisualEffectView).contentView.addSubview(hostingController.view)
-            } else {
-                baseEffectView.contentView.addSubview(hostingController.view)
-            }
+//            if let vibrancyEffect = effect?.platformVibrancyEffect {
+//                addVibrancyView(to: baseEffectView, vibrancyEffect: vibrancyEffect)
+//                (baseEffectView.contentView.subviews.first as! UIVisualEffectView).contentView.addSubview(hostingController.view)
+//            } else {
+//                baseEffectView.contentView.addSubview(hostingController.view)
+//            }
             
             return baseEffectView
         }
         
         func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
             guard let effect = context.environment.visualEffect else {
-                removeVibrancyView(from: uiView)
+//                removeVibrancyView(from: uiView)
                 uiView.effect = nil
                 return
             }
             
             uiView.effect = effect.platformBlurEffect
             
-            if let vibrancyEffect = effect.platformVibrancyEffect {
-                if let subEffectView = uiView.contentView.subviews.first as? UIVisualEffectView {
-                    subEffectView.effect = vibrancyEffect
-                } else {
-                    addVibrancyView(to: uiView, vibrancyEffect: vibrancyEffect)
-                }
-            } else if let _ = uiView.contentView.subviews.first as? UIVisualEffectView {
-                removeVibrancyView(from: uiView)
-            }
+//            if let vibrancyEffect = effect.platformVibrancyEffect {
+//                if let subEffectView = uiView.contentView.subviews.first as? UIVisualEffectView {
+//                    subEffectView.effect = vibrancyEffect
+//                } else {
+//                    addVibrancyView(to: uiView, vibrancyEffect: vibrancyEffect)
+//                }
+//            } else if let _ = uiView.contentView.subviews.first as? UIVisualEffectView {
+//                removeVibrancyView(from: uiView)
+//            }
         }
         
-        private func removeVibrancyView(from baseEffectView: UIVisualEffectView) {
-            if let subEffectView = baseEffectView.contentView.subviews.first as? UIVisualEffectView{
-                subEffectView.removeFromSuperview()
-                if let contentView = subEffectView.subviews.first {
-                    contentView.removeFromSuperview()
-                    baseEffectView.contentView.addSubview(contentView)
-                }
-            }
+//        private func removeVibrancyView(from baseEffectView: UIVisualEffectView) {
+//            if let subEffectView = baseEffectView.contentView.subviews.first as? UIVisualEffectView {
+//                subEffectView.removeFromSuperview()
+//                if let contentView = subEffectView.subviews.first {
+//                    contentView.removeFromSuperview()
+//                    baseEffectView.contentView.addSubview(contentView)
+//                }
+//            }
+//        }
+//
+//        private func addVibrancyView(to baseEffectView: UIVisualEffectView, vibrancyEffect: UIVibrancyEffect) {
+//            let contentView = baseEffectView.contentView.subviews.first
+//            contentView?.removeFromSuperview()
+//
+//            let subEffectView = UIVisualEffectView(effect: vibrancyEffect)
+//            subEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//            baseEffectView.contentView.addSubview(subEffectView)
+//
+//            if let contentView = contentView {
+//                subEffectView.contentView.addSubview(contentView)
+//            }
+//        }
+        
+    }
+    
+    #elseif os(macOS)
+    
+    struct PlatformView<Content: View>: NSViewRepresentable {
+
+        // MARK: - Properties
+        
+        private let hostingController: NSHostingController<Content>
+        
+        // MARK: - Initialization
+        
+        init(@ViewBuilder content: () -> Content) {
+            hostingController = NSHostingController(rootView: content())
         }
         
-        private func addVibrancyView(to baseEffectView: UIVisualEffectView, vibrancyEffect: UIVibrancyEffect) {
-            let contentView = baseEffectView.contentView.subviews.first
-            contentView?.removeFromSuperview()
+        // MARK: - View
+        
+        func makeNSView(context: Context) -> NSVisualEffectView {
+            let effect = context.environment.visualEffect
+            let baseEffectView =  NSVisualEffectView()
             
-            let subEffectView = UIVisualEffectView(effect: vibrancyEffect)
-            subEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            baseEffectView.contentView.addSubview(subEffectView)
+            if let material = effect?.platformMaterial {
+                baseEffectView.material = material
+            }
+            if let blendingMode = effect?.platformBlendingMode {
+                baseEffectView.blendingMode = blendingMode
+            }
+            if let appearance = effect?.platformAppearance {
+                baseEffectView.appearance = appearance
+            }
             
-            if let contentView = contentView {
-                subEffectView.contentView.addSubview(contentView)
+            baseEffectView.autoresizingMask = [.width, .height]
+            hostingController.view.autoresizingMask = [.width, .height]
+            
+            return baseEffectView
+        }
+        
+        func updateNSView(_ nsView: NSVisualEffectView, context: Context) {
+            let effect = context.environment.visualEffect
+            if let material = effect?.platformMaterial {
+                nsView.material = material
+            }
+            if let blendingMode = effect?.platformBlendingMode {
+                nsView.blendingMode = blendingMode
+            }
+            if let appearance = effect?.platformAppearance {
+                nsView.appearance = appearance
             }
         }
         
     }
-    #elseif os(macOS)
-    
     #endif
     
 }

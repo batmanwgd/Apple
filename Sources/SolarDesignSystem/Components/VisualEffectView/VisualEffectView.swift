@@ -32,7 +32,7 @@ import UIKit
 import AppKit
 #endif
 
-@available(macOS 10.16, iOS 14.0, tvOS 14.0, macCatalyst 14.0, *)
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, macCatalyst 14.0, *)
 @available(watchOS, unavailable)
 public struct VisualEffectView<Content: View>: View {
     

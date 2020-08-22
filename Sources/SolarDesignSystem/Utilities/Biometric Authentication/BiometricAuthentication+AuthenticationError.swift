@@ -27,7 +27,7 @@
 #if canImport(LocalAuthentication) && !os(tvOS)
 import LocalAuthentication
 
-@available(macOS 10.16, iOS 14.0, *)
+@available(macOS 11.0, iOS 14.0, *)
 @available(watchOS, unavailable)
 @available(tvOS, unavailable)
 extension BiometricAuthentication {

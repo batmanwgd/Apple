@@ -1,8 +1,8 @@
 //
-//  VisualEffectView+Environment.swift
+//  Theme.swift
 //  Solar Design System
 //
-//  Created by Brandon McQuilkin on 7/5/20.
+//  Created by Brandon McQuilkin on 8/22/20.
 //  Copyright © 2020 Brandon McQuilkin (Marxon13).
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,37 +26,18 @@
 
 import SwiftUI
 
-/// The key used to access into the `EnvironmentValues` data set.
-@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
-@available(watchOS, unavailable)
-public struct VisualEffectKey: EnvironmentKey {
+/// The base protocol for component styles.
+public protocol BaseStyle {
     
-    public typealias Value = VisualEffect?
+    /// The background color to apply to the component.
+    var backgroundColor: KeyPath<Theme, Color> { get }
     
-    #if os(iOS)
-    public static var defaultValue: Value = VisualEffect.adaptive(blurEffect: .material)
-    #elseif os(tvOS)
-    public static var defaultValue: Value = VisualEffect.adaptive(blurEffect: .regular)
-    #elseif os(macOS)
-    public static var defaultValue: Value = VisualEffect.adaptive(blurEffect: .contentBackground)
-    #else
-    public static var defaultValue: VisualEffect?
-    #endif
+    /// The foreground color to apply to the component.
+    var foregroundColor: KeyPath<Theme, Color> { get }
     
 }
 
-extension EnvironmentValues {
-    
-    /// The visual effect applied to views tagged with the `.visualEffect(_:)` modifier, if any.
-    @available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
-    @available(watchOS, unavailable)
-    public var visualEffect: VisualEffect? {
-        get {
-            self[VisualEffectKey.self]
-        }
-        set {
-            self[VisualEffectKey.self] = newValue
-        }
-    }
+/// The base container for styles.
+public struct Style {
     
 }

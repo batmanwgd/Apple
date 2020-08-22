@@ -13,6 +13,14 @@
 ### Fixed
 - No fixes
 
+## [0.0.7] - 2020-08-22
+
+### Fixed
+- Compile issues on macOS due to the VisualEffectView
+
+### Added
+- Shared styles that can be applied to any component.
+
 ## [0.0.6] - 2020-08-15
 
 ### Fixed
